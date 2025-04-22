@@ -41,3 +41,32 @@ body {
     font-size: 0.86em;
     color: #e57171;
 }
+.outputbox {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    width: 300px;
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    color: #ffffff;
+    overflow-y: auto;
+    max-height: calc(100vh - 40px);
+}
+.footer-wrapper {
+    background-color: #1e1e1e;
+    color: #ffffff;
+    padding: 15px;
+    text-align: center;
+    border-top: 1px solid #333;
+    font-size: 0.9em;
+}
+.footer-wrapper a {
+    color: #e57171;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+.footer-wrapper a:hover {
+    color: #ff8a8a;
+}
