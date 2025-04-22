@@ -7,6 +7,9 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow:auto
 }
 .form-container {
     background-color: #1e1e1e;
@@ -34,7 +37,7 @@ body {
 .button-group button:hover {
     background-color: #555;
 }
-#devnote {
+.devnote {
     margin-top: 20px;
     font-size: 0.9em;
     color: #e57171;
