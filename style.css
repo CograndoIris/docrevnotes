@@ -7,7 +7,7 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    padding: 0;
+    padding: 20px;
     height: 100%;
     overflow:auto
 }
@@ -38,6 +38,6 @@ body {
     background-color: #555;
 }
 .devnote {
-    font-size: 0.6em;
+    font-size: 0.86em;
     color: #e57171;
 }
