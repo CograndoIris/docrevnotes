@@ -34,3 +34,8 @@ body {
 .button-group button:hover {
     background-color: #555;
 }
+#devnote {
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #e57171;
+}

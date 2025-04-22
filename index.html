@@ -3,25 +3,111 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dark Mode Form</title>
+    <title>Note Maker</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="form-container">
         <h1>Doc Review Note Taker</h1>
         <form>
-            <div class="form-group">
-                <h3>Contact made?</h3>
+            <div class="contact-form">
+                <p>Contact made?</p>
                 <input type="radio" id="contact" name="options" value="nocontact">
-                <label for="option1">No</label><br>
+                <label for="nocontact">No</label><br>
                 <input type="radio" id="contact" name="options" value="yescontact">
-                <label for="option2">Yes</label><br>
+                <label for="yescontact">Yes</label><br>
             </div>
-            <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
+            <div class="voicemail-form">
+                <p>Voicemail left?</p>
+                <p class="devnote">to appear only when contact made = no</p>
+                <input type="radio" id="voicemail" name="options" value="novm">
+                <label for="novm">No</label><br>
+                <input type="radio" id="voicemail" name="options" value="yesvm">
+                <label for="yesvm">Yes</label><br>
             </div>
-            <div class="form-group
+            <div class="spokewith-form">
+                <p>Spoke with:</p>
+                <p class="devnote">to appear only when contact made = yes</p>
+                <input type="checkbox" id="spokewith" name="checkbox1" value="spoketopatient">
+                <label for="checkbox1">Patient</label><br>
+                <input type="checkbox" id="spokewith" name="checkbox2" value="spokewithMPOA1">
+                <label for="checkbox2">MPOA 1</label><br>
+                <input type="checkbox" id="spokewith" name="checkbox3" value="spokewithMPOA2">
+                <label for="checkbox3">MPOA 2</label><br>
+                <input type="checkbox" id="spokewith" name="checkbox4" value="spokewithMPOA3">
+                <label for="checkbox4">MPOA 3</label><br>
+                <input type="checkbox" id="spokewith" name="checkbox5" value="spokewithother">
+                <label for="checkbox5">Other</label><br>
+            </div>
+            <div class="docsreceived-form">
+                <p>Docs received?</p>
+                <p class="devnote">to appear only when contact made = yes</p>
+                <input type="radio" id="docsreceived" name="options" value="nodocs">
+                <label for="nodocs">No</label><br>
+                <input type="radio" id="docsreceived" name="options" value="yesdocs">
+                <label for="yesdocs">Yes</label><br>
+            </div>
+            <div class="docscreated-form">
+                <p>Docs created:</p>
+                <p class="devnote">to appear only when docs received = yes</p>
+                <input type="checkbox" id="docscreated" name="checkbox6" value="IPS">
+                <label for="checkbox6">IPS</label><br>
+                <input type="checkbox" id="docscreated" name="checkbox7" value="MPOA">
+                <label for="checkbox7">MPOA</label><br>
+                <input type="checkbox" id="docscreated" name="checkbox8" value="LW">
+                <label for="checkbox8">LW</label><br>
+                <input type="checkbox" id="docscreated" name="checkbox9" value="Combined MPOA/LW/5W">
+                <label for="checkbox9">Combined MPOA/LW/5W</label><br>
+                <input type="checkbox" id="docscreated" name="checkbox10" value="POLST/DNR">
+                <label for="checkbox10">POLST/DNR</label><br>
+            </div>
+            <div class="RON/ROWoffer-form">
+                <p>RON/ROW offered:</p>
+                <p class="devnote">to appear only when docs received = yes</p>
+                <input type="radio" id="ronrow" name="options" value="yesronrow">
+                <label for="yesronrow">Yes</label><br>
+                <input type="radio" id="ronrow" name="options" value="noronrow">
+                <label for="noronrow">No</label><br>
+            </div>
+            <div class="RON/ROWscheduled-form">
+                <p>RON/ROW scheduled:</p>
+                <p class="devnote">to appear only when RON/ROW offered = yes</p>
+                <input type="radio" id="ronrowscheduled" name="options" value="yesronrowscheduled">
+                <label for="yesronrowscheduled">Yes</label><br>
+                <input type="radio" id="ronrowscheduled" name="options" value="noronrowscheduled">
+                <label for="noronrowscheduled">No</label><br>
+            </div>
+            <div class="VSipsoffer-form">
+                <p>VSIP offered:</p>
+                <p class="devnote">to appear only when docs received = yes</p>
+                <input type="radio" id="vsipsoffer" name="options" value="yesvsip">
+                <label for="yesvsip">Yes</label><br>
+                <input type="radio" id="vsipsoffer" name="options" value="novsip">
+                <label for="novsip">No</label><br>
+            </div>
+            <div class="VSipscomplete-form">
+                <p>VSIP completed:</p>
+                <p class="devnote">to appear only when VSIP offered = yes</p>
+                <input type="radio" id="vsipscomplete" name="options" value="yesvsipscomplete">
+                <label for="yesvsipscomplete">Yes</label><br>
+                <input type="radio" id="vsipscomplete" name="options" value="novsipscomplete">
+                <label for="novsipscomplete">No</label><br>
+            </div>
+            <div class="discussdoctor-form">
+                <p>Discuss with doctor:</p>
+                <p class="devnote">to appear only when contact made = yes</p>
+                <input type="radio" id="discussdoctor" name="options" value="yesdiscussdoctor">
+                <label for="yesdiscussdoctor">Yes</label><br>
+                <input type="radio" id="discussdoctor" name="options" value="nodiscussdoctor">
+                <label for="nodiscussdoctor">No</label><br>
+            </div>
+            <div class="additionalnotes-form">
+                <p>Additional notes:</p>
+                <textarea id="additionalnotes" name="additionalnotes" rows="4" cols="50"></textarea>
+            <div class="devnote">
+                <p>Next Step</p>
+                <p class="devnote">will autopopulate later</p>
+            </div>
         </form>
         <form>
             <div class="button-group">
