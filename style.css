@@ -70,3 +70,9 @@ body {
 .footer-wrapper a:hover {
     color: #ff8a8a;
 }
+.voicemail-form {
+    transform: translate(-100%)
+}
+.voicemail-form.show {
+    transform: translate(0);
+}
