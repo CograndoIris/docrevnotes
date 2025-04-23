@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Note Maker</title>
     <link rel="stylesheet" href="./style.css">
+    <script src="./script.js" defer></script>
 </head>
 <body>
     <div class="form-container">
@@ -12,18 +13,17 @@
         <form>
             <div class="contact-form">
                 <p>Contact made?</p>
-                <input type="radio" id="contact" name="options" value="nocontact">
-                <label for="nocontact">No</label><br>
-                <input type="radio" id="contact" name="options" value="yescontact">
+                <input type="radio" id="contact" name="contactoptions" value="Yes" class="contactbutton">
                 <label for="yescontact">Yes</label><br>
+                <input type="radio" id="contact" name="contactoptions" value="No" class="contactbutton">
+                <label for="nocontact">No</label><br>
             </div>
-            <div class="voicemail-form">
+            <div class="voicemail-form hidden">
                 <p>Voicemail left?</p>
-                <p class="devnote">to appear only when contact made = no</p>
-                <input type="radio" id="voicemail" name="options" value="novm">
-                <label for="novm">No</label><br>
                 <input type="radio" id="voicemail" name="options" value="yesvm">
                 <label for="yesvm">Yes</label><br>
+                <input type="radio" id="voicemail" name="options" value="novm">
+                <label for="novm">No</label><br>
             </div>
             <div class="spokewith-form">
                 <p>Spoke with:</p>
@@ -42,10 +42,10 @@
             <div class="docsreceived-form">
                 <p>Docs received?</p>
                 <p class="devnote">to appear only when contact made = yes</p>
-                <input type="radio" id="docsreceived" name="options" value="nodocs">
-                <label for="nodocs">No</label><br>
-                <input type="radio" id="docsreceived" name="options" value="yesdocs">
+                <input type="radio" id="docsreceived" name="drecoptions" value="Yes" class="docsreceivedbutton">
                 <label for="yesdocs">Yes</label><br>
+                <input type="radio" id="docsreceived" name="drecoptions" value="No" class="docsreceivedbutton">
+                <label for="nodocs">No</label><br>
             </div>
             <div class="docscreated-form">
                 <p>Docs created:</p>
