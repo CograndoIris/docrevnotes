@@ -14,29 +14,39 @@
             <div class="MPOAs">
                 <p>MPOAs:</p>
                 <div class="MPOA-pair">
-                    <input type="checkbox" id="MPOA1" name="checkbox1" value="MPOA1">
+                    <input type="checkbox" id="MPOA1" name="checkbox1" value="MPOA1" class="MPOAcheck">
                     <label for="checkbox1">MPOA1</label><br>
-                    <input type="text" id="MPOA1name" name="MPOA1name" placeholder="(MPOA 1 Name)" class="MPOA1name">
+                    <input type="text" id="MPOA1name" name="MPOA1name" placeholder="(MPOA 1 Name)" class="MPOA1name MPOAname hidden">
                 </div>
                 <div class="MPOA-pair">
-                    <input type="checkbox" id="MPOA2" name="checkbox2" value="MPOA2">
+                    <input type="checkbox" id="MPOA2" name="checkbox2" value="MPOA2" class="MPOAcheck">
                     <label for="checkbox2">MPOA2</label><br>
-                    <input type="text" id="MPOA2name" name="MPOA2name" placeholder="(MPOA 2 Name)" class="MPOA2name">
+                    <input type="text" id="MPOA2name" name="MPOA2name" placeholder="(MPOA 2 Name)" class="MPOA2name MPOAname hidden">
                 </div> 
                 <div class="MPOA-pair">
-                    <input type="checkbox" id="MPOA3" name="checkbox3" value="MPOA3">
+                    <input type="checkbox" id="MPOA3" name="checkbox3" value="MPOA3" class="MPOAcheck">
                     <label for="checkbox3">MPOA3</label><br>
-                    <input type="text" id="MPOA3name" name="MPOA3name" placeholder="(MPOA 3 Name)" class="MPOA3name">
+                    <input type="text" id="MPOA3name" name="MPOA3name" placeholder="(MPOA 3 Name)" class="MPOA3name MPOAname hidden">
                 </div>
             </div>
             <div class="Authorized Loved Ones">
                 <p>Authorized Loved Ones:</p>
-                <input type="text" id="alo" name="alo" placeholder="(Name)">
-                <label for="alo">Name</label><br>
-                <input type="text" id="alo2" name="alo2" placeholder="(Name)">
-                <label for="alo2">Name</label><br>
-                <input type="text" id="alo3" name="alo3" placeholder="(Name)">
-                <label for="alo3">Name</label><br>
+                <input type="text" id="alo" name="alo" placeholder="(Name)" class="alo alo1">
+                <input type="text" id="alo2" name="alo2" placeholder="(Name)" class="alo alo2">
+                <input type="text" id="alo3" name="alo3" placeholder="(Name)" class="alo alo3">
+            </div>
+            <div class="docscreated-form">
+                <p>Docs created:</p>
+                <input type="checkbox" id="docscreated" name="checkbox6" value="IPS" class="docscreatedcheck ipsdoc">
+                <label for="checkbox6">IPS</label><br>
+                <input type="checkbox" id="docscreated" name="checkbox7" value="MPOA" class="docscreatedcheck mpoadoc">
+                <label for="checkbox7" class="mpoadoc">MPOA</label><br>
+                <input type="checkbox" id="docscreated" name="checkbox8" value="LW" class="docscreatedcheck lwdoc">
+                <label for="checkbox8" class="lwdoc">LW</label><br>
+                <input type="checkbox" id="docscreated" name="checkbox9" value="Combined MPOA/LW/5W" class="docscreatedcheck combineddoc">
+                <label for="checkbox9" class="combineddoc">Combined MPOA/LW/5W</label><br>
+                <input type="checkbox" id="docscreated" name="checkbox10" value="POLST/DNR" class="docscreatedcheck polstdoc">
+                <label for="checkbox10">POLST/DNR</label><br>
             </div>
             <div class="contact-form">
                 <p>Contact made?</p>
@@ -54,7 +64,7 @@
             </div>
             <div class="spokewith-form hidden">
                 <p>Spoke with:</p>
-                <input type="text" id="spokewith" name="spokewithbox" placeholder="(Name)">
+                <input type="text" id="spokewith" name="spokewithbox" placeholder="(Name)" class="spokewithbox">
             </div>
             <div class="docsreceived-form hidden">
                 <p>Docs received?</p>
@@ -62,19 +72,6 @@
                 <label for="yesdocs">Yes</label><br>
                 <input type="radio" id="docsreceived" name="drecoptions" value="No" class="docsreceivedbutton">
                 <label for="nodocs">No</label><br>
-            </div>
-            <div class="docscreated-form hidden">
-                <p>Docs created:</p>
-                <input type="checkbox" id="docscreated" name="checkbox6" value="IPS">
-                <label for="checkbox6">IPS</label><br>
-                <input type="checkbox" id="docscreated" name="checkbox7" value="MPOA">
-                <label for="checkbox7">MPOA</label><br>
-                <input type="checkbox" id="docscreated" name="checkbox8" value="LW">
-                <label for="checkbox8">LW</label><br>
-                <input type="checkbox" id="docscreated" name="checkbox9" value="Combined MPOA/LW/5W">
-                <label for="checkbox9">Combined MPOA/LW/5W</label><br>
-                <input type="checkbox" id="docscreated" name="checkbox10" value="POLST/DNR">
-                <label for="checkbox10">POLST/DNR</label><br>
             </div>
             <div class="ronoffer-form hidden">
                 <p>RON/ROW offered:</p>
@@ -112,7 +109,6 @@
             </div>
             <div class="discussdoctor-form hidden">
                 <p>Discuss doctor's visit?:</p>
-                <p class="devnote">to appear only when contact made = yes</p>
                 <input type="radio" id="discussdoctor" name="discdocoptions" value="Yes" class="discussdoctorbutton">
                 <label for="yesdiscussdoctor">Yes</label><br>
                 <input type="radio" id="discussdoctor" name="discdocoptions" value="No" class="discussdoctorbutton">
@@ -120,23 +116,21 @@
             </div>
             <div class="additionalnotes-form hidden">
                 <p>Encounter Notes:</p>
-                <textarea id="additionalnotes" name="additionalnotes" rows="8" cols="75" placeholder="(Write in first person. Summarize all key points discussed during the call, including who you spoke with, what was explained or clarified, any questions from the patient/ALO, and their responses or preferences.)"></textarea>
-            <div class="devnote">
+                <textarea id="additionalnotes" class="encounternotesbox" rows="8" cols="75" placeholder="(Write in first person. Summarize all key points discussed during the call, including who you spoke with, what was explained or clarified, any questions from the patient/ALO, and their responses or preferences.)"></textarea>
+            </div>
+            <div class="nextstep-form">
                 <p>Next Step</p>
                 <p class="devnote">will autopopulate later</p>
             </div>
             <div class="signature-form">
-                <p>Sign off Signature (eg "-CGrandorf"):</p>
-                <input type="text" id="signature" name="signature">
+                <p>Sign off Signature:</p>
+                <input type="text" id="signature" name="signature" class="signaturebox" placeholder="(eg -CGrandorf)">
                 <label for="signature">Your sign off here</label><br>
-        </form>
-        <form>
-            <div class="button-group">
-                <button type="button" onclick="alert('Option 1 Selected')">Option 1</button>
-                <button type="button" onclick="alert('Option 2 Selected')">Option 2</button>
-                <button type="button" onclick="alert('Option 3 Selected')">Option 3</button>
-                <button type="button" onclick="alert('Option 4 Selected')">Option 4</button>
             </div>
+            <footer id="footer-wrapper">
+                <p>Created by Connor Grandorf</p>
+                <p>Version 1.0</p>
+            </footer>
         </form>
     </div>
     <div class="outputbox">
@@ -144,8 +138,4 @@
         <textarea id="output" name="output" rows="20" cols="100"></textarea>
     </div>
 </body>
-<footer id="footer-wrapper">
-    <p>Created by Connor Grandorf</p>
-    <p>Version 1.0</p>
-</footer>
 </html>
