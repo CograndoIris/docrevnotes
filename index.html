@@ -11,45 +11,60 @@
     <div class="form-container">
         <h1>Doc Review Note Taker</h1>
         <form>
+            <div class="MPOAs">
+                <p>MPOAs:</p>
+                <div class="MPOA-pair">
+                    <input type="checkbox" id="MPOA1" name="checkbox1" value="MPOA1">
+                    <label for="checkbox1">MPOA1</label><br>
+                    <input type="text" id="MPOA1name" name="MPOA1name" placeholder="(MPOA 1 Name)" class="MPOA1name">
+                </div>
+                <div class="MPOA-pair">
+                    <input type="checkbox" id="MPOA2" name="checkbox2" value="MPOA2">
+                    <label for="checkbox2">MPOA2</label><br>
+                    <input type="text" id="MPOA2name" name="MPOA2name" placeholder="(MPOA 2 Name)" class="MPOA2name">
+                </div> 
+                <div class="MPOA-pair">
+                    <input type="checkbox" id="MPOA3" name="checkbox3" value="MPOA3">
+                    <label for="checkbox3">MPOA3</label><br>
+                    <input type="text" id="MPOA3name" name="MPOA3name" placeholder="(MPOA 3 Name)" class="MPOA3name">
+                </div>
+            </div>
+            <div class="Authorized Loved Ones">
+                <p>Authorized Loved Ones:</p>
+                <input type="text" id="alo" name="alo" placeholder="(Name)">
+                <label for="alo">Name</label><br>
+                <input type="text" id="alo2" name="alo2" placeholder="(Name)">
+                <label for="alo2">Name</label><br>
+                <input type="text" id="alo3" name="alo3" placeholder="(Name)">
+                <label for="alo3">Name</label><br>
+            </div>
             <div class="contact-form">
                 <p>Contact made?</p>
                 <input type="radio" id="contact" name="contactoptions" value="Yes" class="contactbutton">
-                <label for="yescontact">Yes</label><br>
+                <label for="Yes">Yes</label><br>
                 <input type="radio" id="contact" name="contactoptions" value="No" class="contactbutton">
-                <label for="nocontact">No</label><br>
+                <label for="No">No</label><br>
             </div>
             <div class="voicemail-form hidden">
                 <p>Voicemail left?</p>
-                <input type="radio" id="voicemail" name="options" value="yesvm">
-                <label for="yesvm">Yes</label><br>
-                <input type="radio" id="voicemail" name="options" value="novm">
-                <label for="novm">No</label><br>
+                <input type="radio" id="voicemail" name="options" value="Yes" class="voicemailbutton">
+                <label for="Yes">Yes</label><br>
+                <input type="radio" id="voicemail" name="options" value="No" class="voicemailbutton">
+                <label for="No">No</label><br>
             </div>
-            <div class="spokewith-form">
+            <div class="spokewith-form hidden">
                 <p>Spoke with:</p>
-                <p class="devnote">to appear only when contact made = yes</p>
-                <input type="checkbox" id="spokewith" name="checkbox1" value="spoketopatient">
-                <label for="checkbox1">Patient</label><br>
-                <input type="checkbox" id="spokewith" name="checkbox2" value="spokewithMPOA1">
-                <label for="checkbox2">MPOA 1</label><br>
-                <input type="checkbox" id="spokewith" name="checkbox3" value="spokewithMPOA2">
-                <label for="checkbox3">MPOA 2</label><br>
-                <input type="checkbox" id="spokewith" name="checkbox4" value="spokewithMPOA3">
-                <label for="checkbox4">MPOA 3</label><br>
-                <input type="checkbox" id="spokewith" name="checkbox5" value="spokewithother">
-                <label for="checkbox5">Other</label><br>
+                <input type="text" id="spokewith" name="spokewithbox" placeholder="(Name)">
             </div>
-            <div class="docsreceived-form">
+            <div class="docsreceived-form hidden">
                 <p>Docs received?</p>
-                <p class="devnote">to appear only when contact made = yes</p>
                 <input type="radio" id="docsreceived" name="drecoptions" value="Yes" class="docsreceivedbutton">
                 <label for="yesdocs">Yes</label><br>
                 <input type="radio" id="docsreceived" name="drecoptions" value="No" class="docsreceivedbutton">
                 <label for="nodocs">No</label><br>
             </div>
-            <div class="docscreated-form">
+            <div class="docscreated-form hidden">
                 <p>Docs created:</p>
-                <p class="devnote">to appear only when docs received = yes</p>
                 <input type="checkbox" id="docscreated" name="checkbox6" value="IPS">
                 <label for="checkbox6">IPS</label><br>
                 <input type="checkbox" id="docscreated" name="checkbox7" value="MPOA">
@@ -61,49 +76,51 @@
                 <input type="checkbox" id="docscreated" name="checkbox10" value="POLST/DNR">
                 <label for="checkbox10">POLST/DNR</label><br>
             </div>
-            <div class="RON/ROWoffer-form">
+            <div class="ronoffer-form hidden">
                 <p>RON/ROW offered:</p>
                 <p class="devnote">to appear only when docs received = yes</p>
-                <input type="radio" id="ronrow" name="options" value="yesronrow">
+                <input type="radio" id="ronrow" name="ronofoptions" value="Yes" class="ronofferbutton">
                 <label for="yesronrow">Yes</label><br>
-                <input type="radio" id="ronrow" name="options" value="noronrow">
+                <input type="radio" id="ronrow" name="ronofoptions" value="No" class="ronofferbutton">
                 <label for="noronrow">No</label><br>
             </div>
-            <div class="RON/ROWscheduled-form">
+            <div class="ronscheduled-form hidden">
                 <p>RON/ROW scheduled:</p>
                 <p class="devnote">to appear only when RON/ROW offered = yes</p>
-                <input type="radio" id="ronrowscheduled" name="options" value="yesronrowscheduled">
+                <input type="radio" id="ronrowscheduled" name="ronsceoptions" value="yesronrowscheduled">
                 <label for="yesronrowscheduled">Yes</label><br>
-                <input type="radio" id="ronrowscheduled" name="options" value="noronrowscheduled">
+                <input type="radio" id="ronrowscheduled" name="ronsceoptions" value="noronrowscheduled">
                 <label for="noronrowscheduled">No</label><br>
             </div>
-            <div class="VSipsoffer-form">
-                <p>VSIP offered:</p>
+            <div class="vsipsoffer-form hidden">
+                <p>VSIPS offered:</p>
                 <p class="devnote">to appear only when docs received = yes</p>
-                <input type="radio" id="vsipsoffer" name="options" value="yesvsip">
+                <input type="radio" id="vsipsoffer" name="vsofoptions" value="No" class="vsipsofferbutton">
                 <label for="yesvsip">Yes</label><br>
-                <input type="radio" id="vsipsoffer" name="options" value="novsip">
+                <input type="radio" id="vsipsoffer" name="vsofoptions" value="Yes" class="vsipsofferbutton">
                 <label for="novsip">No</label><br>
+                <input type="radio" id="vsipsoffer" name="vsofoptions" value="N/A" class="vsipsofferbutton">
+                <label for="novsip">N/A</label><br>
             </div>
-            <div class="VSipscomplete-form">
-                <p>VSIP completed:</p>
+            <div class="vsipscomplete-form hidden">
+                <p>VSIPS completed:</p>
                 <p class="devnote">to appear only when VSIP offered = yes</p>
-                <input type="radio" id="vsipscomplete" name="options" value="yesvsipscomplete">
+                <input type="radio" id="vsipscomplete" name="vscomoptions" value="Yes" class="vsipscompletebutton">
                 <label for="yesvsipscomplete">Yes</label><br>
-                <input type="radio" id="vsipscomplete" name="options" value="novsipscomplete">
+                <input type="radio" id="vsipscomplete" name="vscomoptions" value="No" class="vsipscompletebutton">
                 <label for="novsipscomplete">No</label><br>
             </div>
-            <div class="discussdoctor-form">
-                <p>Discuss with doctor:</p>
+            <div class="discussdoctor-form hidden">
+                <p>Discuss doctor's visit?:</p>
                 <p class="devnote">to appear only when contact made = yes</p>
-                <input type="radio" id="discussdoctor" name="options" value="yesdiscussdoctor">
+                <input type="radio" id="discussdoctor" name="discdocoptions" value="Yes" class="discussdoctorbutton">
                 <label for="yesdiscussdoctor">Yes</label><br>
-                <input type="radio" id="discussdoctor" name="options" value="nodiscussdoctor">
+                <input type="radio" id="discussdoctor" name="discdocoptions" value="No" class="discussdoctorbutton">
                 <label for="nodiscussdoctor">No</label><br>
             </div>
-            <div class="additionalnotes-form">
-                <p>Additional notes:</p>
-                <textarea id="additionalnotes" name="additionalnotes" rows="4" cols="50"></textarea>
+            <div class="additionalnotes-form hidden">
+                <p>Encounter Notes:</p>
+                <textarea id="additionalnotes" name="additionalnotes" rows="8" cols="75" placeholder="(Write in first person. Summarize all key points discussed during the call, including who you spoke with, what was explained or clarified, any questions from the patient/ALO, and their responses or preferences.)"></textarea>
             <div class="devnote">
                 <p>Next Step</p>
                 <p class="devnote">will autopopulate later</p>

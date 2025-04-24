@@ -76,3 +76,14 @@ body {
 .hidden {
     display: none;
 }
+.MPOAs {
+    display: flex;
+    flex-direction: column; /* Stack pairs vertically */
+    gap: 3px; /* Space between pairs */
+}
+
+.MPOA-pair {
+    display: flex;
+    align-items: center; /* Align checkbox and textbox vertically */
+    gap: 5px; /* Space between checkbox and textbox */
+}
