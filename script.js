@@ -239,7 +239,7 @@ ronofferEvent.forEach((button) => {
         outputState.ronOffer = `RON/ROW Offered: ${output}`;
         if (output === 'No') {
             hideClass('ronscheduled-form');
-            outputState.ronScheduled = 'N/A';
+            outputState.ronScheduled = 'RON/ROW Scheduled: N/A';
         }
         if (event.currentTarget.value === 'Yes') { 
             showClass('ronscheduled-form');
@@ -248,17 +248,30 @@ ronofferEvent.forEach((button) => {
     });
 });
 
+const ronscheduledEvent = document.querySelectorAll('.ronscheduledbutton');
+ronscheduledEvent.forEach((button) => {
+    button.addEventListener('click', (event) => {
+        let output = event.currentTarget.value;
+        outputState.ronScheduled = `RON/ROW Scheduled: ${output}`;
+        updateOutput();
+    });
+});
+
 const vsipsofferEvent = document.querySelectorAll('.vsipsofferbutton');
 vsipsofferEvent.forEach((button) => {
     button.addEventListener('click', (event) => {
         let output = event.currentTarget.value;
-        outputState.vsipOffer = `VSIPS offered: ${output}`;
+        outputState.vsipOffer = `VSIPS Offered: ${output}`;
         if (output === 'No') {
             hideClass('vsipscomplete-form');
-            outputState.vsipComplete = 'N/A';
+            outputState.vsipComplete = 'VSIPS Complete: N/A';
         }
         if (event.currentTarget.value === 'Yes') { 
             showClass('vsipscomplete-form');
+        }
+        if (event.currentTarget.value === 'N/A') { 
+            hideClass('vsipscomplete-form');
+            outputState.vsipComplete = 'VSIPS Complete: N/A';
         }
         updateOutput();
     });
