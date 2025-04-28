@@ -22,37 +22,38 @@ const updateOutput = () => {
     let contactoutput = `empty`;
     if (outputState.contact === 'Contacted: No') {
         contactoutput = `${outputState.date}
-    ${outputState.mpoas}
-    ${outputState.alos}
-    ${outputState.docsCreated}
-    ${outputState.contact}
-    ${outputState.voicemail}
-    ${outputState.signature}
+${outputState.mpoas}
+${outputState.alos}
+${outputState.docsCreated}
+${outputState.contact}
+${outputState.voicemail}
+${outputState.nextSteps}
+${outputState.signature}
     `.trim();}
     if (outputState.contact === 'Contacted: Yes') {
         contactoutput = `${outputState.date}
-    ${outputState.mpoas}
-    ${outputState.alos}
-    ${outputState.docsCreated}
-    ${outputState.contact}
-    ${outputState.spokeWith}
-    ${outputState.docsReceived}
-    ${outputState.ronOffer}
-    ${outputState.ronScheduled}
-    ${outputState.vsipOffer}
-    ${outputState.vsipComplete}
-    ${outputState.discDoctor}
-    ${outputState.encounterNotes}
-    ${outputState.nextSteps}
-    ${outputState.signature}
+${outputState.mpoas}
+${outputState.alos}
+${outputState.docsCreated}
+${outputState.contact}
+${outputState.spokeWith}
+${outputState.docsReceived}
+${outputState.ronOffer}
+${outputState.ronScheduled}
+${outputState.vsipsOffer}
+${outputState.vsipsComplete}
+${outputState.discDoctor}
+${outputState.encounterNotes}
+${outputState.nextSteps}
+${outputState.signature}
     `.trim();
     }
     if (outputState.contact === '') {
         contactoutput = `${outputState.date}
-    ${outputState.mpoas}
-    ${outputState.alos}
-    ${outputState.docsCreated}
-    ${outputState.signature}`.trim();
+${outputState.mpoas}
+${outputState.alos}
+${outputState.docsCreated}
+${outputState.signature}`.trim();
     }
     console.log(contactoutput);
     document.querySelector('#output').textContent = contactoutput;
@@ -261,17 +262,17 @@ const vsipsofferEvent = document.querySelectorAll('.vsipsofferbutton');
 vsipsofferEvent.forEach((button) => {
     button.addEventListener('click', (event) => {
         let output = event.currentTarget.value;
-        outputState.vsipOffer = `VSIPS Offered: ${output}`;
+        outputState.vsipsOffer = `VSIPS Offered: ${output}`;
         if (output === 'No') {
             hideClass('vsipscomplete-form');
-            outputState.vsipComplete = 'VSIPS Complete: N/A';
+            outputState.vsipsComplete = 'VSIPS Complete: N/A';
         }
         if (event.currentTarget.value === 'Yes') { 
             showClass('vsipscomplete-form');
         }
         if (event.currentTarget.value === 'N/A') { 
             hideClass('vsipscomplete-form');
-            outputState.vsipComplete = 'VSIPS Complete: N/A';
+            outputState.vsipsComplete = 'VSIPS Complete: N/A';
         }
         updateOutput();
     });
@@ -281,7 +282,7 @@ const vsipscompleteEvent = document.querySelectorAll('.vsipscompletebutton');
 vsipscompleteEvent.forEach((button) => {
     button.addEventListener('click', (event) => {
         let output = event.currentTarget.value;
-        outputState.vsipComplete = `VSIPS Complete: ${output}`;
+        outputState.vsipsComplete = `VSIPS Complete: ${output}`;
         updateOutput();
     });
 });
@@ -299,6 +300,13 @@ const encounterNotesEvent = document.querySelector('.encounternotesbox');
 encounterNotesEvent.addEventListener('input', (event) => {
     let output = event.currentTarget.value;
     outputState.encounterNotes = `Encounter Notes: ${output}`;
+    updateOutput();
+});
+
+const nextStepsEvent = document.querySelector('.nextstepbox');
+nextStepsEvent.addEventListener('input', (event) => {
+    let output = event.currentTarget.value;
+    outputState.nextSteps = `Next Steps: ${output}`;
     updateOutput();
 });
 

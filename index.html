@@ -10,7 +10,7 @@
 <body>
     <div class="form-container">
         <h1>Doc Review Note Taker</h1>
-        <form>
+        <form autocomplete="off" id="note-form">
             <div class="MPOAs">
                 <p>MPOAs:</p>
                 <div class="MPOA-pair">
@@ -82,16 +82,16 @@
             </div>
             <div class="ronscheduled-form hidden">
                 <p>RON/ROW scheduled:</p>
-                <input type="radio" id="ronrowscheduled" name="ronsceoptions" value="yesronrowscheduled" class="ronscheduledbutton">
+                <input type="radio" id="ronrowscheduled" name="ronsceoptions" value="Yes" class="ronscheduledbutton">
                 <label for="yesronrowscheduled">Yes</label><br>
-                <input type="radio" id="ronrowscheduled" name="ronsceoptions" value="noronrowscheduled" class="ronscheduledbutton">
+                <input type="radio" id="ronrowscheduled" name="ronsceoptions" value="No" class="ronscheduledbutton">
                 <label for="noronrowscheduled">No</label><br>
             </div>
             <div class="vsipsoffer-form hidden">
                 <p>VSIPS offered:</p>
-                <input type="radio" id="vsipsoffer" name="vsofoptions" value="No" class="vsipsofferbutton">
-                <label for="yesvsip">Yes</label><br>
                 <input type="radio" id="vsipsoffer" name="vsofoptions" value="Yes" class="vsipsofferbutton">
+                <label for="yesvsip">Yes</label><br>
+                <input type="radio" id="vsipsoffer" name="vsofoptions" value="No" class="vsipsofferbutton">
                 <label for="novsip">No</label><br>
                 <input type="radio" id="vsipsoffer" name="vsofoptions" value="N/A" class="vsipsofferbutton">
                 <label for="novsip">N/A</label><br>
@@ -116,7 +116,7 @@
             </div>
             <div class="nextstep-form">
                 <p>Next Step</p>
-                <p class="devnote">will autopopulate later</p>
+                <textarea id="nextstep" class="nextstepbox" rows="3" cols="30" placeholder="(eg - Call back in 2 weeks)"></textarea>
             </div>
             <div class="signature-form">
                 <p>Sign off Signature:</p>
@@ -125,13 +125,13 @@
             </div>
             <footer id="footer-wrapper">
                 <p>Created by Connor Grandorf</p>
-                <p>Version 1.1</p>
+                <p>Version 1.2</p>
             </footer>
         </form>
     </div>
     <div class="outputbox">
         <h2>Output</h2>
-        <textarea id="output" name="output" rows="20" cols="100"></textarea>
+        <textarea id="output" name="output" rows="25" cols="60"></textarea>
     </div>
 </body>
 </html>
