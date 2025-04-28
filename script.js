@@ -317,6 +317,16 @@ signatureEvent.addEventListener('input', (event) => {
     updateOutput();
 });
 
+function copyToClipboard() {
+    const output = document.querySelector('#output').textContent;
+    navigator.clipboard.writeText(output).then(() => {
+        console.log('Copied to clipboard');
+    }).catch(err => {
+        console.error('Error copying to clipboard: ', err);
+    });
+}
+
+
 //const output = "hi there";
 //document.querySelector('#output').textContent = output;
 //document.querySelector('#output').textContent = contactoutput;

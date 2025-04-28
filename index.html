@@ -114,24 +114,24 @@
                 <p>Encounter Notes:</p>
                 <textarea id="additionalnotes" class="encounternotesbox" rows="8" cols="75" placeholder="(Write in first person. Summarize all key points discussed during the call, including who you spoke with, what was explained or clarified, any questions from the patient/ALO, and their responses or preferences.)"></textarea>
             </div>
-            <div class="nextstep-form">
+            <div class="nextstep-form hidden">
                 <p>Next Step</p>
                 <textarea id="nextstep" class="nextstepbox" rows="3" cols="30" placeholder="(eg - Call back in 2 weeks)"></textarea>
             </div>
             <div class="signature-form">
                 <p>Sign off Signature:</p>
                 <input type="text" id="signature" name="signature" class="signaturebox" placeholder="(eg -CGrandorf)">
-                <label for="signature">Your sign off here</label><br>
             </div>
             <footer id="footer-wrapper">
                 <p>Created by Connor Grandorf</p>
-                <p>Version 1.2</p>
+                <p>Version 1.3</p>
             </footer>
         </form>
     </div>
     <div class="outputbox">
         <h2>Output</h2>
         <textarea id="output" name="output" rows="25" cols="60"></textarea>
+        <button id="copy-button" onclick="copyToClipboard()">Copy to Clipboard</button>
     </div>
 </body>
 </html>
