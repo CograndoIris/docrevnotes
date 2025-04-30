@@ -29,7 +29,7 @@ ${outputState.contact}
 ${outputState.voicemail}
 ${outputState.nextSteps}
 ${outputState.signature}
-    `.trim();}
+`.trim().replace(/  +/g, ' ');}
     if (outputState.contact === 'Contacted: Yes') {
         contactoutput = `${outputState.date}
 ${outputState.mpoas}
@@ -46,32 +46,27 @@ ${outputState.discDoctor}
 ${outputState.encounterNotes}
 ${outputState.nextSteps}
 ${outputState.signature}
-    `.trim();
+`.trim().replace(/  +/g, ' ');
     }
     if (outputState.contact === '') {
         contactoutput = `${outputState.date}
 ${outputState.mpoas}
 ${outputState.alos}
 ${outputState.docsCreated}
-${outputState.signature}`.trim();
+${outputState.signature}`.trim().replace(/  +/g, ' ');
     }
     console.log(contactoutput);
     document.querySelector('#output').textContent = contactoutput;
 }
 
-const hideClass = (inclass) => {
-    const elements = document.querySelectorAll(`.${inclass}`);
-    elements.forEach((element) => {
-        element.classList.add("hidden");
-    });
-}
-const showClass = (inclass) => {
-    const elements = document.querySelectorAll(`.${inclass}`);
-    elements.forEach((element) => {
-        element.classList.remove("hidden");
-    });
-}
-
+/*document.addEventListener("DOMContentLoaded", () => {
+    fetch("footer.html")
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById("footer-wrapper").innerHTML = data;
+        })
+        .catch(error => console.error("Error loading footer:", error));
+});*/
 
 const MPOAevent = document.querySelectorAll('.MPOAcheck');
 MPOAevent.forEach((button) => {
@@ -317,14 +312,7 @@ signatureEvent.addEventListener('input', (event) => {
     updateOutput();
 });
 
-function copyToClipboard() {
-    const output = document.querySelector('#output').textContent;
-    navigator.clipboard.writeText(output).then(() => {
-        console.log('Copied to clipboard');
-    }).catch(err => {
-        console.error('Error copying to clipboard: ', err);
-    });
-}
+
 
 
 //const output = "hi there";

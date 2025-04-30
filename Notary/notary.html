@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Note Maker</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script src="./notaryScript.js" defer></script>
+    <script src="../universal.js"></script>
+</head>
+<body>
+    <button id="open-sidebar-button" onclick="openSidebar()">
+        <span class="material-symbols-rounded">
+            menu
+        </span>
+    </button>
+    <nav class="navbar" id="sidebar">
+        <ul>
+            <li><button id="close-sidebar-button" onclick="closeSidebar()">
+                <span class="material-symbols-rounded">
+                    close
+                </span>
+            </button></li>
+            <li><a href="../DocRevCadence/index.html">Doc Review Cadence</a></li>
+            <li><a href="../Notary/notary.html" class="active-link">Notary Prep & Reminder</a></li>
+            <li><a href="../AdminRev/adminreview.html">Admin Review</a></li>
+        </ul>
+    </nav>
+    <div class="form-container">
+        <h1>Notary Prep & Reminder</h1>
+        <form autocomplete="off" id="note-form">
+            <div class="rontype">
+                <p>Appointment Type:</p>
+                <input type="radio" id="Ronwits" name="rontype" value="RON w/ Wits" class="rontypecheck">
+                <label for="Ronwits">RON w/ wits</label><br>
+                <input type="radio" id="Ron" name="rontype" value="RON" class="rontypecheck">
+                <label for="ron">RON</label><br>
+                <input type="radio" id="Row" name="rontype" value="ROW" class="rontypecheck">
+                <label for="row">ROW</label><br>
+            </div>
+            <div class="needed-docs">
+                <p>Needed docs:</p>
+                <input type="checkbox" id="docsneeded" name="checkbox6" value="IPS" class="docsneededcheck ipsdoc">
+                <label for="checkbox6">IPS</label><br>
+                <input type="checkbox" id="docsneeded" name="checkbox7" value="MPOA" class="docsneededcheck mpoadoc">
+                <label for="checkbox7" class="mpoadoc">MPOA</label><br>
+                <input type="checkbox" id="docsneeded" name="checkbox8" value="LW" class="docsneededcheck lwdoc">
+                <label for="checkbox8" class="lwdoc">LW</label><br>
+                <input type="checkbox" id="docsneeded" name="checkbox9" value="Combined MPOA/LW/5W" class="docsneededcheck combineddoc">
+                <label for="checkbox9" class="combineddoc">Combined MPOA/LW/5W</label><br>
+                <input type="checkbox" id="docsneeded" name="checkbox10" value="POLST/DNR" class="docsneededcheck polstdoc">
+                <label for="checkbox10">POLST/DNR</label><br>
+            </div>
+            <div class="email">
+                <p>Email:</p>
+                <input type="email" id="email" name="email" placeholder="(Email)" class="emailinput">
+            </div>
+            <div class="dateAndTime">
+                <p>Date & Time:</p>
+                <p>Reminder: Do not schedule the appointment within 3 business days.</p>
+                <input type="datetime-local" id="date" name="date" class="date" step="900" min="2025-04-30T00:00">
+            </div>
+            <div class="additionalnotes-form">
+                <p>Formatting Notes:</p>
+                <textarea id="formattingnotes" class="formattingnotesbox" rows="8" cols="75" placeholder="(Write any additional notes for formatting, eg 'add pcp information on page 5'.)"></textarea>
+            </div>
+            <div class="signature-form">
+                <p>Sign off Signature:</p>
+                <input type="text" id="signature" name="signature" class="signaturebox" placeholder="(eg -CGrandorf)">
+            </div>
+            <div class="reset-button" >
+                <button id="reset-button" onclick="resetForm()">Reset Form</button>
+            </div>
+        </form>
+
+    <footer id="footer-wrapper">
+    </footer>
+    <div class="outputbox">
+        <h2>Output</h2>
+        <textarea id="output" name="output" rows="25" cols="60"></textarea>
+        <button id="copy-button" onclick="copyToClipboard()">Copy to Clipboard</button>
+    </div>
+</body>
+</html>

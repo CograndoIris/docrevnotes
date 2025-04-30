@@ -89,3 +89,89 @@ body {
     align-items: center; /* Align checkbox and textbox vertically */
     gap: 5px; /* Space between checkbox and textbox */
 }
+.form-header {
+    font-size: 24px;
+    margin-bottom: 4px;
+}
+.navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: #313131;
+    padding-top: 32px;
+    padding-left: 28px;
+    padding-right: 28px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    top: 16px;
+}
+nav {
+    position: fixed;
+    left: -100%;
+    transition: left 0.3s ease;
+}
+nav.show{
+    left: 20px;
+}
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+nav a {
+    display: inline-block; /* Makes the links behave like buttons */
+    text-decoration: none; /* Removes the underline */
+    color: #ffffff; /* Text color */
+    background-color: #505050; /* Button background color */
+    padding: 10px 20px; /* Adds padding for a button-like appearance */
+    border-radius: 4px; /* Rounds the corners */
+    transition: background-color 0.3s, color 0.3s; /* Smooth hover effect */
+    font-size: 16px; /* Adjust font size */
+    text-align: center; /* Centers the text */
+    width: 6.5em;;
+}
+nav a:hover {
+    background-color: #ae8d8d; /* Changes background color on hover */
+    color: #ffffff; /* Ensures text remains visible on hover */
+}
+nav a.active-link {
+    background-color: #555; /* Highlights the active link */
+    border: 2px solid #777; /* Adds a border to the active link */
+}
+#open-sidebar-button, #close-sidebar-button {
+    display: flex; /* Ensures the content inside is aligned properly */
+    align-items: center; /* Vertically centers the icon */
+    justify-content: center; /* Horizontally centers the icon */
+    height: 40px; /* Set a fixed height for the button */
+    width: 40px; /* Set a fixed width for the button */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+    background-color: #ffffff; /* Optional: Set a background color */
+    border: none; /* Remove default border */
+    border-radius: 8px; /* Optional: Add rounded corners */
+    cursor: pointer; /* Change cursor to pointer for better UX */
+    margin-bottom: 32px;
+    position: fixed;
+    top: 32px;
+    left: 38px;
+    z-index: 1000; /* Ensure the button is above other elements */
+}
+#open-sidebar-button {
+    display: flex; /* Ensures the content inside is aligned properly */
+}
+#close-sidebar-button {
+    display: none;
+}
+.navbar ul li {
+    margin-top: 12px;
+    margin-bottom: 8px;
+}
+.reset-button {
+    color: #fff; /* White text */
+    border: none; /* No border */;
+    padding: 24px 20px; /* Padding for button */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition */
+}
