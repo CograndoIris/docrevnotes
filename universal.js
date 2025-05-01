@@ -1,4 +1,4 @@
-const version = "1.4";
+const version = "1.4.1";
 document.addEventListener("DOMContentLoaded", () => {
     console.log("Initializing")
     const footer = document.getElementById("footer-wrapper");
