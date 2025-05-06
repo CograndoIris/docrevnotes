@@ -1,4 +1,4 @@
-const version = "1.4.1";
+const version = "1.4.2";
 document.addEventListener("DOMContentLoaded", () => {
     console.log("Initializing")
     const footer = document.getElementById("footer-wrapper");
@@ -43,18 +43,14 @@ const closeSidebar = () => {
 }
 
 function resetForm() {
-    const form = document.getElementById('note-form');
-    const signature = document.getElementById('signature').value;
-    //console.log(signature);
-    form.reset();
-    setTimeout(() => {
-        document.getElementById('signature').value = signature;
-        console.log("Signature set");
-    }
-    , 400);
-    document.getElementById('signature').value = signature;
-    console.log("Form reset");
-    updateOutput
+    const resetRadio = document.querySelectorAll('.reset');
+    const resetText = document.querySelectorAll('.resettext');
+    resetRadio.forEach((radio) => {
+        return radio.checked = false;
+    });
+    resetText.forEach((text) => {
+        return text.value = "";
+    });
 }
 
 function copyToClipboard() {
